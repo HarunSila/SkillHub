@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/views/cours-participants/cours-participants.component.scss"],
+  "sourcesContent": [":host {\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    gap: 16px;\r\n    margin-top: 16px;\r\n    margin-bottom: 16px;\r\n    padding: 16px;\r\n\r\n}\r\n\r\n.filter-field {\r\n    width: 100%\r\n}\r\n\r\n.table-container {\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: auto;\r\n}\r\n\r\nh4 {\r\n    color: white;\r\n    font-size: larger;\r\n}\r\n\r\nmat-card {\r\n    align-self: center;\r\n    padding: 16px;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n    opacity: 0.9;\r\n    background-color: #27323c;\r\n}"],
+  "mappings": ";AAAA;AACI,UAAA;AACA,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,eAAA;AACA,OAAA;AACA,cAAA;AACA,iBAAA;AACA,WAAA;;AAIJ,CAAA;AACI,SAAA;;AAGJ,CAAA;AACI,SAAA;AACA,UAAA;AACA,YAAA;;AAGJ;AACI,SAAA;AACA,aAAA;;AAGJ;AACI,cAAA;AACA,WAAA;AACA,SAAA;AACA,cAAA;AACA,WAAA;AACA,oBAAA;;",
+  "names": []
+}

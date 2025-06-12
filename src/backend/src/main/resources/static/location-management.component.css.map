@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/views/location-management/location-management.component.scss"],
+  "sourcesContent": [":host {\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n}\r\n\r\n.form-card {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin-top: 8px;\r\n    margin-bottom: 8px;\r\n    width: 98%;\r\n    padding: 20px;\r\n    border-radius: 8px;\r\n    opacity: 0.9;\r\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\r\n    background-color: #27323c;\r\n\r\n    &.table {\r\n        overflow-y: auto;\r\n    }\r\n\r\n    mat-card-title {\r\n        color: white;\r\n        margin-top: 8px;\r\n        margin-bottom: 24px;\r\n    }\r\n\r\n    .table-container {\r\n        width: 100%;\r\n        overflow-x: auto;\r\n    }\r\n}\r\n\r\n"],
+  "mappings": ";AAAA;AACI,UAAA;AACA,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,eAAA;;AAGJ,CAAA;AACI,WAAA;AACA,kBAAA;AACA,cAAA;AACA,iBAAA;AACA,SAAA;AACA,WAAA;AACA,iBAAA;AACA,WAAA;AACA,cAAA,EAAA,IAAA,KAAA,KAAA,CAAA,EAAA,CAAA,EAAA,CAAA,EAAA;AACA,oBAAA;;AAEA,CAZJ,SAYI,CAAA;AACI,cAAA;;AAGJ,CAhBJ,UAgBI;AACI,SAAA;AACA,cAAA;AACA,iBAAA;;AAGJ,CAtBJ,UAsBI,CAAA;AACI,SAAA;AACA,cAAA;;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/views/my-courses/my-courses.component.scss"],
+  "sourcesContent": [":host {\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    color: white;\r\n}"],
+  "mappings": ";AAAA;AACI,UAAA;AACA,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,eAAA;;AAGJ;AACI,SAAA;;",
+  "names": []
+}

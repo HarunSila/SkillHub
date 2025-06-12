@@ -1,0 +1,74 @@
+<div class="carousel-container">
+
+
+    <ng-container *ngIf="availableLocationsArray[selectedIndex] as location">
+        <mat-card *ngIf="getLocationTimeslots(location[0]).length > 0">
+        
+            <div class="card-toolbar">
+                <div class="btn-carousel btn-prev">
+                    <button mat-icon-button (click)="previous()">
+                        <mat-icon>chevron_left</mat-icon>
+                    </button>
+                </div>
+
+                <mat-card-header>
+                    <mat-card-title>{{ getLocationName(location[0]) }}</mat-card-title>
+                    <mat-card-subtitle>Capacity of Participants: {{getLocationCapacity(location[0])}}</mat-card-subtitle>
+                </mat-card-header>
+                
+                <div class="btn-carousel btn-next">
+                    <button mat-icon-button (click)="next()">
+                        <mat-icon>chevron_right</mat-icon>
+                    </button>
+                </div>
+            </div>
+            
+
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Equipment</mat-panel-title>
+                        <mat-panel-description>Available equipment for this location.</mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <table mat-table [dataSource]="getLocationEquipment(location[0])" class="mat-elevation-z8">
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                            <td mat-cell *matCellDef="let equipment"> {{equipment.name}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="description">
+                            <th mat-header-cell *matHeaderCellDef> Description </th>
+                            <td mat-cell *matCellDef="let equipment"> {{equipment.description}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="amount">
+                            <th mat-header-cell *matHeaderCellDef> Status </th>
+                            <td mat-cell *matCellDef="let equipment">{{equipment.amount}}</td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Available Timeslots</mat-panel-title>
+                        <mat-panel-description>Select a timeslot and confirm the choice for the selected day.</mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="timeslot-expansionpanel-content">
+                        <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedTimeSlot">
+                            <mat-radio-button 
+                                *ngFor="let timeslot of getLocationTimeslots(location[0])" 
+                                [value]="timeslot">
+                                {{timeslot}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                        <button mat-raised-button color="primary" (click)="addTimeRange(location[0])">Choose Timeslot</button>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card>
+    </ng-container>
+</div>

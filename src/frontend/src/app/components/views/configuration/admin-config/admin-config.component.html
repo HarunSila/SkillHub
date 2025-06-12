@@ -1,0 +1,74 @@
+<mat-card class="form-card">
+  <mat-card-title>Company Information</mat-card-title>
+  <form class="company-form" [formGroup]="companyForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Company Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contact Phone</mat-label>
+      <input matInput formControlName="contactPhone">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contact Email</mat-label>
+      <input matInput formControlName="contactEmail">
+    </mat-form-field>
+
+    <div class="address-fields" formGroupName="address">
+      <mat-form-field appearance="outline" class="street">
+        <mat-label>Street</mat-label>
+        <input matInput formControlName="street">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="number">
+        <mat-label>Number</mat-label>
+        <input matInput formControlName="number">
+      </mat-form-field>
+    </div>
+
+    <div class="address-fields" formGroupName="address">
+      <mat-form-field appearance="outline" class="plz">
+        <mat-label>PLZ</mat-label>
+        <input matInput formControlName="plz">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="city">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city">
+      </mat-form-field>
+    </div>
+
+    <mat-chip-set>
+      <mat-chip *ngFor="let ot of openingTimes" [removable]="true" (removed)="removeOpeningTime(ot)">
+        {{ getOpeningTimeDisplay(ot) }}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-set>
+
+    <button mat-raised-button type="submit" (click)="save()" [disabled]="companyForm.invalid">Save</button>
+  </form>
+</mat-card>
+
+<mat-card class="form-card">
+  <mat-card-title>Business hours</mat-card-title>
+  <form class="openingTime-form" [formGroup]="openingTimeForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Weekday</mat-label>
+      <mat-select formControlName="weekday">
+        <mat-option *ngFor="let day of weekDays" [value]="day">{{ day }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Start Time</mat-label>
+      <input matInput type="time" formControlName="startTime">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>End Time</mat-label>
+      <input matInput type="time" formControlName="endTime">
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" (click)="addOpeningTime()" [disabled]="openingTimeForm.invalid">Add or Update</button>
+  </form>
+</mat-card>

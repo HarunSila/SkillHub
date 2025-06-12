@@ -1,0 +1,51 @@
+.carousel-container {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+
+    & mat-card {
+        border-radius: 15px;
+        background-color: #27323c;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;;
+        mat-card-header {
+            text-align: left;
+            color: white;
+        }
+
+        .card-toolbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            mat-card-header {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        mat-expansion-panel {
+            background-color: #27323c;
+            .timeslot-expansionpanel-content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    mat-panel-description {
+        display: none;
+    }
+    
+}

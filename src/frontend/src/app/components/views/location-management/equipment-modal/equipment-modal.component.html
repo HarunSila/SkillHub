@@ -1,0 +1,39 @@
+<!-- Display form for adding equipment -->
+<div class="modal-container" *ngIf="showAddEquipment">
+    <mat-card class="form-card">
+        <mat-card-title>Equipment Information</mat-card-title>
+        <form class="equipment-form" [formGroup]="equipmentForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Amount</mat-label>
+                <input matInput type="number" formControlName="amount">
+            </mat-form-field>
+
+            <button mat-raised-button type="submit" (click)="save()" [disabled]="equipmentForm.invalid">Save</button>
+            <button mat-raised-button (click)="cancel()">Cancel</button>
+        </form>
+    </mat-card>
+</div>
+
+<!-- Display card for deleting location -->
+<div class="modal-container" *ngIf="showDeleteLocation">
+    <mat-card class="form-card">
+        <mat-card-title>Delete Location</mat-card-title>
+        <p>Are you sure you want to delete this Location?</p>
+        <mat-card-actions>
+            <button mat-raised-button (click)="delete()">Delete</button>
+            <button mat-raised-button (click)="cancel()">Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+

@@ -1,0 +1,23 @@
+<div class="footer-container">
+    <div class="contact-info-container">
+        <div class="contact-container">
+            <p><mat-icon fontIcon="phone"></mat-icon>{{getPhoneNumber()}}</p>
+            <p><mat-icon fontIcon="mail"></mat-icon> {{getEmail()}}</p>
+        </div>
+        <mat-divider class="horizontal-divider"></mat-divider>
+        <div class="company-info-container">
+            <p>&copy; {{getYear()}} {{getName()}}. All rights reserved.</p>
+            <p>{{getStreet()}} {{getNumber()}} &bull; {{getPlz()}} {{getCity()}}</p>
+        </div>
+    </div>
+    <div class="vertical-divider-container">
+        <mat-divider class="vertical-divider" [vertical]="true"></mat-divider>
+    </div>
+    <mat-divider class="horizontal-divider optional"></mat-divider>
+    <div class="opening-times-container">
+        <p class="opening-times-title">Business hours</p>
+        <div class="opening-times">
+            <p *ngFor="let ot of company?.openingTimes">{{getOpeningTimeDisplay(ot)}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<form class="location-form" [formGroup]="locationForm">
+        <div class="location-information-container">
+            <mat-form-field appearance="outline">
+                <mat-label>Location Name</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Capacity</mat-label>
+                <input matInput formControlName="capacity" type="number">
+            </mat-form-field>
+
+            <button mat-raised-button type="button" class="clear-button" (click)="clearForm()">Clear</button>
+        </div>
+        
+        <div class="location-equipment-container">
+            <div class="equipment-selection-container">
+                <mat-chip-set>
+                    <mat-chip *ngFor="let equipment of equipmentList" color="primary" selected removable="true" (removed)="removeEquipment(equipment)">
+                        {{ equipment.name }} <span *ngIf="equipment.amount">({{ equipment.amount }})</span>
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip>
+                </mat-chip-set>
+            </div>
+            <div class="button-container" formGroupName="status">
+                <mat-slide-toggle formControlName="active">
+                    <mat-label>Active</mat-label>
+                </mat-slide-toggle>
+                <button mat-raised-button type="button" class="add-equipment-button" (click)="addEquipment()">Add Equipment</button>
+                <button mat-raised-button type="submit" class="submit-button" (click)="save()" [disabled]="locationForm.invalid">Save</button>
+            </div>
+        </div>
+    </form>

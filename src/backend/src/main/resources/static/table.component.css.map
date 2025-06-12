@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/views/users/table/table.component.scss"],
+  "sourcesContent": [".filter-field {\r\n    width: 100%\r\n}\r\n\r\n.table-container {\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: auto;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACI,SAAA;;AAGJ,CAAA;AACI,SAAA;AACA,UAAA;AACA,YAAA;;",
+  "names": []
+}

@@ -1,0 +1,9 @@
+<mat-card class="mat-elevation-z4" *ngIf="!userHasRole()">
+  <mat-card-content>
+    <p>
+        Thank you for registering! An administrator will review and unlock your profile shortly.
+        Until then, you can browse and view available courses, but full functionality will be enabled after approval.
+    </p>
+  </mat-card-content>
+</mat-card>
+<app-cours-cards [participantCourses]="participantCourses" [showRegisterButton]="true"></app-cours-cards>

@@ -1,0 +1,53 @@
+.location-form {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        .location-information-container {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .location-equipment-container {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .equipment-selection-container {
+                display: flex;
+                flex-direction: row;
+                gap: 16px;
+                overflow-x: auto;
+            }
+
+            .button-container{
+                display: flex;
+                justify-content: space-between;
+                margin-top: auto;
+
+                mat-label {
+                    color: white;
+                }
+            }
+        }
+    }
+
+@media screen and (max-width: 768px) {
+
+    .location-form {
+        flex-direction: column;
+
+        .location-information-container {
+            width: 100%;
+        }
+
+        .location-equipment-container {
+            width: 100%;
+        }
+    }
+    
+}

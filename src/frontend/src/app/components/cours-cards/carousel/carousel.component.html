@@ -1,0 +1,21 @@
+<img mat-card-image [src]="getCurrentImage()" alt="Cours" class="course-image">
+
+<mat-card-header>
+    <div class="header-container">
+        <button mat-icon-button (click)="previousImage()" *ngIf="pictureUrls.length > 1">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+
+
+        <div class="title-container">
+            <mat-card-title>{{ cours.title }}</mat-card-title>
+            <p><strong>with {{getTrainerName(cours.availabilities[0])}}</strong></p>
+        </div>
+
+        <button mat-icon-button (click)="nextImage()" *ngIf="pictureUrls.length > 1">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+    
+</mat-card-header>
+

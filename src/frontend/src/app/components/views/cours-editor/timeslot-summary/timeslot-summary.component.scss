@@ -1,0 +1,28 @@
+
+.content-container {
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 320px;
+  min-width: 320px;
+  max-width: 100%;
+
+  h4 {
+      color: white;
+      font-size: larger;
+  }
+
+  mat-chip-set {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+  }
+
+  mat-chip {
+      width: 100%;
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+      white-space: normal;
+  }
+}

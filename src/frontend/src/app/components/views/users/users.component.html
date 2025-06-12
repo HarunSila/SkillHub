@@ -1,0 +1,20 @@
+<mat-card>
+    <h4>Unassigned Users</h4>
+    <app-table [columns]="columns_unassignedRoles" 
+                [data]="uers_unassignedRoles">
+    </app-table>
+</mat-card>
+
+<mat-card>
+    <h4>Trainer</h4>
+    <app-table [columns]="columns_trainer" 
+                [data]="users_trainer" [role]="'trainer'">
+    </app-table>
+</mat-card>
+
+<mat-card>
+    <h4>Participants</h4>
+    <app-table [columns]="columns_participants" 
+                [data]="users_participants" [role]="'participant'">
+    </app-table>
+</mat-card>

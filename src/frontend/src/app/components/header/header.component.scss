@@ -1,0 +1,50 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(180deg,rgba(49, 62, 74, 1) 0%, rgba(107, 110, 113, 1) 56%, rgba(56, 64, 78, 1) 81%);
+
+    .logo-container{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        img{
+            height:50px;
+        }
+    }
+
+    .button-container{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+    .icon-menu{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .menu-button {
+            display: none;
+        }
+
+        .person-button {
+            display: flex;
+            align-items: center;
+            min-width: fit-content;
+            gap: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .header-container .button-container{
+        display: none;
+    }
+    .header-container .icon-menu .menu-button {
+            display: block;
+    }
+}

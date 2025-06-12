@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/views/courses/courses.component.scss"],
+  "sourcesContent": [":host {\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n}\r\n\r\nmat-card {\r\n    margin-top: 16px;\r\n    color: white;\r\n    opacity: 0.8;\r\n}"],
+  "mappings": ";AAAA;AACI,UAAA;AACA,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,eAAA;;AAGJ;AACI,cAAA;AACA,SAAA;AACA,WAAA;;",
+  "names": []
+}

@@ -1,0 +1,85 @@
+<div class="cours-editor-container">
+  <form [formGroup]="courseForm" class="cours-form">
+    <h4>Cours Information</h4>
+    <div class="cours-info-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" rows="3"></textarea>
+      </mat-form-field>
+    </div>
+    
+    <h4>Availability & Location</h4>
+    <div class="availability-location-container">
+      <div class="availability-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Max Participants</mat-label>
+          <input matInput type="number" formControlName="maxParticipants" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Start Date</mat-label>
+          <input matInput [matDatepicker]="startDatePicker" formControlName="startDate" required>
+          <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>End Date</mat-label>
+          <input matInput [matDatepicker]="endDatePicker" formControlName="endDate" required>
+          <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Duration in minutes</mat-label>
+          <input matInput type="number" formControlName="duration" required>
+          <mat-error *ngIf="courseForm.get('duration')?.hasError('notDivisibleBy30')">
+            Duration must be divisible by 30.
+        </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="filterLocation()" [disabled]="!courseForm.valid">Filter Locations</button>
+      </div>
+
+      <div class="location-container">
+        <mat-tab-group>
+          <mat-tab label="Monday" *ngIf="showDaySlots('MONDAY')">
+            <app-carousel [availableLocations]="getAvailabilityPerDay('MONDAY')" [day]="getDayFromKey('MONDAY')"></app-carousel>
+          </mat-tab>
+          <mat-tab label="Tuesday" *ngIf="showDaySlots('TUESDAY')">
+            <app-carousel [availableLocations]="getAvailabilityPerDay('TUESDAY')" [day]="getDayFromKey('TUESDAY')"></app-carousel>
+          </mat-tab>
+          <mat-tab label="Wednesday" *ngIf="showDaySlots('WEDNESDAY')">
+            <app-carousel [availableLocations]="getAvailabilityPerDay('WEDNESDAY')" [day]="getDayFromKey('WEDNESDAY')"></app-carousel>
+          </mat-tab>
+          <mat-tab label="Thursday" *ngIf="showDaySlots('THURSDAY')">
+            <app-carousel [availableLocations]="getAvailabilityPerDay('THURSDAY')" [day]="getDayFromKey('THURSDAY')"></app-carousel></mat-tab>
+          <mat-tab label="Friday" *ngIf="showDaySlots('FRIDAY')">
+            <app-carousel [availableLocations]="getAvailabilityPerDay('FRIDAY')" [day]="getDayFromKey('FRIDAY')"></app-carousel>
+          </mat-tab>
+          <mat-tab label="Saturday" *ngIf="showDaySlots('SATURDAY')">
+            <app-carousel [availableLocations]="getAvailabilityPerDay('SATURDAY')" [day]="getDayFromKey('SATURDAY')"></app-carousel>
+          </mat-tab>
+          <mat-tab label="Sunday" *ngIf="showDaySlots('SUNDAY')">
+            <app-carousel [availableLocations]="getAvailabilityPerDay('SUNDAY')" [day]="getDayFromKey('SUNDAY')"></app-carousel>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+    
+    <div class="summary-pictureupload-container">
+      <app-timeslot-summary></app-timeslot-summary>
+      <app-picture-upload></app-picture-upload>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button color="warn" (click)="clear()">Clear</button>
+      <button mat-raised-button color="primary" (click)="saveCourse()">Save Cours</button>
+    </div>
+  </form>
+</div>

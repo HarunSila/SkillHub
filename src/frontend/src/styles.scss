@@ -1,0 +1,78 @@
+@use '@angular/material' as mat;
+@use './styles/m3-theme.scss';
+
+html {
+    @include mat.core-theme(m3-theme.$dark-theme);
+    @include mat.all-component-themes(m3-theme.$dark-theme);
+}
+
+html, body { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background:  url('./assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+
+body, app-root{ 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.2);
+    pointer-events: none;
+    z-index: 0;
+}
+
+router-outlet {
+    flex: 1;
+    height: fit-content;
+    z-index: 1;
+}
+
+app-header, app-footer{
+    z-index: 1;
+    position: relative;
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #86929e99 transparent; // primary 60, semi-transparent, no track color
+}
+
+/* Webkit browsers (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(134, 146, 158, 0.7); // primary 60, 70% opacity
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(38, 49, 59, 0.15); // subtle shadow, primary base
+  transition: background 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(109, 120, 132, 0.9); // primary 50, 90% opacity
+  box-shadow: 0 4px 12px rgba(38, 49, 59, 0.22);
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}

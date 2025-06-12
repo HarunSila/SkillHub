@@ -1,0 +1,56 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+h4 {
+    color: white;
+    font-size: larger;
+}
+
+.preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.preview-item {
+  border: 1px solid #ccc;
+  padding: 8px;
+  background: #fafafa;
+  cursor: grab;
+  width: 120px;
+  text-align: center;
+}
+.preview-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 5px;
+}
+.url-text {
+  font-size: 10px;
+  word-break: break-all;
+}
+
+.upload-box {
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  color: #888;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.upload-box:hover {
+  border-color: #333;
+}

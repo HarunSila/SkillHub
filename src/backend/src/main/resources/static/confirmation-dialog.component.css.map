@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/confirmation-dialog/confirmation-dialog.component.scss"],
+  "sourcesContent": [":host {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    gap: 16px;\r\n    padding: 16px;\r\n    background-color: #ba1a1a;\r\n}\r\n\r\nh4 {\r\n    color: white;\r\n    font-size: x-large;\r\n}\r\n\r\np {\r\n    color: white;\r\n}\r\n\r\n.button-container {\r\n    display: flex;\r\n    justify-content: space-around;\r\n}"],
+  "mappings": ";AAAA;AACI,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,OAAA;AACA,WAAA;AACA,oBAAA;;AAGJ;AACI,SAAA;AACA,aAAA;;AAGJ;AACI,SAAA;;AAGJ,CAAA;AACI,WAAA;AACA,mBAAA;;",
+  "names": []
+}

@@ -1,0 +1,21 @@
+<h4>Confirmation needed</h4>
+
+<div *ngIf="isDeleteConfirmation === true && isDeleteRegitrationConfirmation === false" class="text-container">
+    <p>Are you sure you want to delete your account?</p>
+    <p>This action can't be undone. All your data including registrations will be deleted permanently.</p>
+</div>
+
+<div *ngIf="isDeleteConfirmation === false && isDeleteRegitrationConfirmation === false" class="text-container">
+    <p>Are you sure you want to update the account data?</p>
+</div>
+
+<div *ngIf="isDeleteRegitrationConfirmation === true" class="text-container">
+    <p>Are you sure you want to delete the registration?</p>
+    <p>This action can't be undone. The user can register for the cours again.</p>
+    <p>If you want to save the registration, but not let the user participate, you can switch the status to 'Blocked'.</p>
+</div>
+
+<div class="button-container">
+    <button mat-raised-button type="submit" (click)="onConfirm()">Confirm</button>
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+</div>

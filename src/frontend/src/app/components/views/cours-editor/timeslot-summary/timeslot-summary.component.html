@@ -1,0 +1,13 @@
+<div class="content-container">
+    <h4>Selected Timeslots</h4>
+
+    <mat-chip-set class="mat-mdc-chip-set-stacked">
+        <mat-chip *ngFor="let availability of availabilities$ | async"
+            removable="true"
+            (removed)="removeAvailability(availability)">
+            {{availability.weekday}}: {{ availability.startTime }} - {{ availability.endTime }}
+            at {{ availability.location?.name }}
+            <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+    </mat-chip-set>
+</div>

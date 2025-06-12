@@ -1,0 +1,43 @@
+.modal-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    .form-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+        opacity: 0.9;
+        background-color: #27323c;
+
+        mat-card-title {
+            color: white;
+            margin-top: 8px;
+            margin-bottom: 24px;
+        }
+
+        .equipment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+        }
+
+        p {
+            color: white;
+        }
+
+        mat-card-actions {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+}

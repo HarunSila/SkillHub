@@ -1,0 +1,35 @@
+<div class="content-container">
+  <h4>Picture upload</h4>
+  <div 
+    class="upload-box"
+    (click)="fileInput.click()"
+    (dragover)="onDragOverBox($event)"
+    (drop)="onDropBox($event)">
+    Drag & Drop images here or click to select
+    <input 
+      #fileInput 
+      type="file" 
+      (change)="onFileSelected($event)" 
+      multiple 
+      accept="image/*" 
+      style="display: none;"
+    />
+  </div>
+
+  <div class="preview-list">
+    <div
+      class="preview-item"
+      *ngFor="let file of imageFiles$ | async; let i = index"
+      draggable="true"
+      (dragstart)="onDragStart(i)"
+      (dragover)="onDragOver($event, i)"
+      (drop)="onDrop(i)"
+    >
+      <img [src]="file.url" alt="Preview" class="preview-img" />
+      <div class="url-text">{{ file.name }}</div>
+      <button mat-icon-button color="warn" (click)="removeImage(i)" aria-label="Remove image">
+        <mat-icon>delete</mat-icon>
+      </button>    
+    </div>
+  </div>
+</div>

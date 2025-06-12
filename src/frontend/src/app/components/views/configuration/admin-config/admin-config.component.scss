@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.form-card {
+    align-self: center;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    opacity: 0.9;
+    background-color: #27323c;
+    
+    mat-card-title {
+        color: white;
+        margin-top: 8px;
+        margin-bottom: 24px;
+    }
+}
+
+.company-form, .openingTime-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.full-width {
+  width: 100%;
+}
+.address-fields {
+  display: flex;
+  gap: 16px;
+}
+.street, .plz {
+  flex: 2;
+}
+.number, .city {
+  flex: 1;
+}

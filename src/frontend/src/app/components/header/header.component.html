@@ -1,0 +1,45 @@
+<div class="header-container">
+
+    <div class="logo-container" (click)="navigateTo('/courses')">
+        <img [src]="logo" alt="Logo" class="logo">
+    </div>
+    <div class="button-container">
+        <button mat-flat-button (click)="navigateTo('/courses')">Courses</button>
+        <button mat-flat-button (click)="navigateTo('/users')" *appHasRole="'admin'">Users</button>
+        <button mat-flat-button (click)="navigateTo('/location-management')" *appHasRole="'admin'">Location Management</button>
+    </div>
+
+    <div class="icon-menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+            <mat-icon fontIcon="menu"></mat-icon>
+        </button>
+            <mat-menu #menu="matMenu">>
+                <button mat-menu-item (click)="navigateTo('/courses')">
+                    <span>Courses</span>
+                </button>
+                <button mat-menu-item (click)="navigateTo('/users')" *appHasRole="'admin'">
+                    <span>Users</span>
+                </button>
+                <button mat-menu-item (click)="navigateTo('/location-management')" *appHasRole="'admin'">
+                    <span>Location Management</span>
+                </button>
+            </mat-menu>
+
+        <button mat-icon-button [matMenuTriggerFor]="personMenu" class="person-button">
+            <span class="username">{{ getUsername() }}</span>
+            <mat-icon fontIcon="person"></mat-icon>
+        </button>
+            <mat-menu #personMenu="matMenu">
+                <button mat-menu-item (click)="navigateTo('/my-courses')" *appHasRole="['trainer', 'participant']">
+                    <span>My Courses</span>
+                </button>
+                <button mat-menu-item (click)="navigateTo('/configuration')">
+                    <span>Configuration</span>
+                </button>
+                <button mat-menu-item (click)="logout()">
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+    </div>
+</div>
+

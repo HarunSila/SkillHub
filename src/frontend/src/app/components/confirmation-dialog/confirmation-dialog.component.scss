@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: #ba1a1a;
+}
+
+h4 {
+    color: white;
+    font-size: x-large;
+}
+
+p {
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+}
