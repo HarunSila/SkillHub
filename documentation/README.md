@@ -1,4 +1,4 @@
-**Architecture:** Enthält ein Bild des Softwarearchitekutr-Modells.  
+**Architecture:** Enthält ein Bild des Softwarearchitektur-Modells.  
 **Processes:** Enthält ein Bild der Geschäfstprozess-Modells.  
 **UI-Design:** Enthält Bilder der UI-Design-Modellierung.  
 **UML:** Enthält ein Bild des Fachkonzeptmodells.  
